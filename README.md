@@ -12,7 +12,7 @@ Sandsea Notes 是一个本地优先的 Markdown 笔记软件。笔记存在你�
 
 **简体中文** · [English](./README.en.md)
 
-仓库：[Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/hanhaiszw/sandsea)
+仓库：[Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/hanhaiszw/sandsea-notes)
 
 ---
 
