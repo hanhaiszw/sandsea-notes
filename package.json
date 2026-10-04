@@ -14,13 +14,13 @@
     "macos",
     "笔记"
   ],
-  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes#readme",
+  "homepage": "https://github.com/hanhaiszw/sandsea#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes.git"
+    "url": "git+https://github.com/hanhaiszw/sandsea.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes/issues"
+    "url": "https://github.com/hanhaiszw/sandsea/issues"
   },
   "license": "MIT",
   "author": "Sandsea Notes contributors",

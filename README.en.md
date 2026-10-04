@@ -12,9 +12,7 @@ Sandsea Notes is a local-first Markdown note-taking app. Your notes live in a fo
 
 [简体中文](./README.md) · **English**
 
-Repositories: [Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes)
-
-> The GitHub one above is still a placeholder — replace `YOUR_GITHUB_USERNAME` once you create it, and update the placeholder in `package.json` as well.
+Repositories: [Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/hanhaiszw/sandsea)
 
 ---
 
