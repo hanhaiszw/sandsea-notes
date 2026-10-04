@@ -12,9 +12,9 @@ Sandsea Notes 是一个本地优先的 Markdown 笔记软件。笔记存在你�
 
 **简体中文** · [English](./README.en.md)
 
-仓库：[GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes) · [Gitee](https://gitee.com/YOUR_GITEE_USERNAME/sandsea-notes)
+仓库：[Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes)
 
-> 建好仓库后把上面两处的 `YOUR_*_USERNAME` 换成你的账号，`package.json` 里的占位也要一起改。
+> GitHub 那处仍是占位，建好仓库后把 `YOUR_GITHUB_USERNAME` 换成你的账号，`package.json` 里的对应占位也要一起改。
 
 ---
 
@@ -29,18 +29,40 @@ Sandsea Notes 是一个本地优先的 Markdown 笔记软件。笔记存在你�
 - **Git 同步（可选）** —— 要多设备时再接上 GitHub / Gitee 一键提交推送；本机没装 git 也能用（内置实现）
 - **纯本地** —— 除你配置的 Git 远程外不发起任何网络请求，无遥测
 
+## 界面
+
+**源码与预览并排，滚动联动** —— 左边写，右边即时看到结果；工具栏覆盖标题、列表、待办、表格、文字颜色。
+
+![分栏编辑](./docs/screenshots/01-split-editor.png)
+
+**Mermaid 图表** —— 代码块的语言写上 `mermaid` 就会渲染成图。
+
+![Mermaid 图表](./docs/screenshots/02-preview-mermaid.png)
+
+**预览里能直接改** —— 勾选待办、点单元格改表格、增删行列，改动都会写回源码。
+
+| 表格与待办 | 图片与文字颜色 |
+| --- | --- |
+| ![表格与待办](./docs/screenshots/03-preview-tables-tasks.png) | ![图片与文字颜色](./docs/screenshots/04-preview-images-colors.png) |
+
+**版本历史** —— 打开笔记库自动开启；提交前一屏看清这次改了什么，历史里三栏翻看，也能把单个文件恢复成旧版本。
+
+| 提交与差异 | 文件历史 |
+| --- | --- |
+| ![提交与差异](./docs/screenshots/05-commit-diff.png) | ![文件历史](./docs/screenshots/06-history.png) |
+
 ## 安装
 
 ### 普通用户
 
-**目前还没有提供预编译包**（GitHub / Gitee 的 Releases 是空的），请先按下面「从源码运行」操作。
+**暂时没有可直接下载的安装包**，请按下面「从源码运行」自行打包。原因有两个：GitHub / Gitee 的 Releases 还没有附件；打出来的 `.dmg` 约 141 MB，超过 Gitee 发行版单个附件 100 MB 的上限。
 
 ### 从源码运行
 
-需要 **Node.js 20.19+ 或 22.12+**。
+需要 **Node.js 20.19+ 或 22.12+**。目前只支持 macOS（Apple Silicon）。
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes.git
+git clone https://gitee.com/hanhaiszw/sandsea-notes.git
 cd sandsea-notes
 npm install
 npm run dev
@@ -52,11 +74,14 @@ npm run dev
 ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ npm install
 ```
 
-想打包成可以双击的 `.app`：
+打成可以双击的 `.app`，或者直接生成 `.dmg`：
 
 ```bash
-npm run pack   # 产物在 release/mac-arm64/Sandsea Notes.app
+npm run pack   # 产物：release/mac-arm64/Sandsea Notes.app
+npm run dmg    # 产物：release/Sandsea Notes-0.1.0-arm64.dmg
 ```
+
+> 自行打出来的包没有代码签名：本机双击可以正常打开；一旦经浏览器或网盘传给他人，对方首次打开会被 Gatekeeper 拦下，需要在「系统设置 → 隐私与安全性」里放行。
 
 ## 上手 3 步
 

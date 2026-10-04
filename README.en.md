@@ -12,9 +12,9 @@ Sandsea Notes is a local-first Markdown note-taking app. Your notes live in a fo
 
 [简体中文](./README.md) · **English**
 
-Repositories: [GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes) · [Gitee](https://gitee.com/YOUR_GITEE_USERNAME/sandsea-notes)
+Repositories: [Gitee](https://gitee.com/hanhaiszw/sandsea-notes) · [GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes)
 
-> After you create the repositories, replace `YOUR_*_USERNAME` in both places above with your own account, and update the placeholder in `package.json` as well.
+> The GitHub one above is still a placeholder — replace `YOUR_GITHUB_USERNAME` once you create it, and update the placeholder in `package.json` as well.
 
 ---
 
@@ -29,18 +29,40 @@ Repositories: [GitHub](https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes) ·
 - **Git sync (optional)** — connect GitHub / Gitee to commit-and-push across devices; works even if git isn't installed (built-in implementation)
 - **Purely local** — no network requests beyond the Git remote you configure, and no telemetry
 
+## Screenshots
+
+**Source and preview side by side, scroll-linked** — write on the left, see the result on the right; the toolbar covers headings, lists, tasks, tables and text colours.
+
+![Split editor](./docs/screenshots/01-split-editor.png)
+
+**Mermaid diagrams** — name the code fence `mermaid` and it renders as a diagram.
+
+![Mermaid diagram](./docs/screenshots/02-preview-mermaid.png)
+
+**Editable right in the preview** — tick tasks, edit table cells, add or remove rows and columns; the changes are written back to the source.
+
+| Tables and tasks | Images and colours |
+| --- | --- |
+| ![Tables and tasks](./docs/screenshots/03-preview-tables-tasks.png) | ![Images and colours](./docs/screenshots/04-preview-images-colors.png) |
+
+**Version history** — on by default the moment you open a vault; review what changed before committing, browse three columns of history, and restore a single file to an older version.
+
+| Commit and diff | File history |
+| --- | --- |
+| ![Commit and diff](./docs/screenshots/05-commit-diff.png) | ![File history](./docs/screenshots/06-history.png) |
+
 ## Installation
 
 ### Regular users
 
-**No prebuilt package is available yet** (the Releases pages on GitHub / Gitee are empty), so please run from source as described in "Running from source" below.
+**No prebuilt package is available yet** — please build it yourself as described in "Running from source" below. Two reasons: the GitHub / Gitee Releases have no attachments, and the `.dmg` comes out at about 141 MB, above Gitee's 100 MB per-attachment limit.
 
 ### Running from source
 
-Requires **Node.js 20.19+ or 22.12+**.
+Requires **Node.js 20.19+ or 22.12+**. macOS (Apple Silicon) only for now.
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes.git
+git clone https://gitee.com/hanhaiszw/sandsea-notes.git
 cd sandsea-notes
 npm install
 npm run dev
@@ -52,11 +74,16 @@ On networks in mainland China, it's advisable to route the Electron binary throu
 ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ npm install
 ```
 
-To package it into a double-clickable `.app`:
+To package it into a double-clickable `.app`, or straight into a `.dmg`:
 
 ```bash
 npm run pack   # output is at release/mac-arm64/Sandsea Notes.app
+npm run dmg    # output is at release/Sandsea Notes-0.1.0-arm64.dmg
 ```
+
+> Builds are unsigned: they open fine on your own machine, but once you pass them to someone else
+> through a browser or cloud drive, their first launch is blocked by Gatekeeper and has to be
+> allowed in System Settings → Privacy & Security.
 
 ## Getting Started
 
