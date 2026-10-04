@@ -1,0 +1,93 @@
+{
+  "name": "sandsea-notes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sandsea Notes — 本地优先的 Markdown 笔记软件 / local-first Markdown note-taking app, plain .md files on disk",
+  "keywords": [
+    "markdown",
+    "notes",
+    "note-taking",
+    "electron",
+    "local-first",
+    "codemirror",
+    "editor",
+    "macos",
+    "笔记"
+  ],
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/sandsea-notes/issues"
+  },
+  "license": "MIT",
+  "author": "Sandsea Notes contributors",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "npm run typecheck && electron-vite build",
+    "icon": "electron scripts/build-icon.cjs",
+    "pack": "npm run build && electron-builder --mac",
+    "start": "electron-vite preview",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
+    "typecheck:web": "tsc -p tsconfig.web.json --noEmit"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.12.4",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.13",
+    "@lezer/highlight": "^1.2.5",
+    "@types/markdown-it": "^14.2.0",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "codemirror": "^6.0.2",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "markdown-it": "^15.0.2",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "mermaid": "^12.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.6",
+    "zustand": "^5.0.15"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "electron-store": "^8.2.0",
+    "isomorphic-git": "^1.42.3",
+    "simple-git": "^4.0.2"
+  },
+  "build": {
+    "appId": "com.sandsea.notes",
+    "productName": "Sandsea Notes",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dir"
+      ],
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns"
+    }
+  }
+}

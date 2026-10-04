@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!--
+    应用图标。
+    这是唯一的矢量源文件：build/icon.icns（macOS 打包用）、build/icon.png（运行时设 Dock 图标用）
+    都由它渲染而来，改动后重新跑 npm run icon 即可。
+    配色取自界面的双主题令牌：深板岩底 + 琥珀色强调（signal 色 #c98a3f）。
+    字形选 # 而不是文档轮廓：16px 下轮廓会糊成一团，单个粗字形还能认出来，
+    而且直接点明这是个 Markdown 笔记应用。
+    注意：XML 注释里不能出现连续两个减号，写 CSS 变量名时要注意。
+  -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#343b48" />
+      <stop offset="1" stop-color="#161920" />
+    </linearGradient>
+  </defs>
+
+  <!-- macOS 图标规范：内容不铺满画布，四周留出约 10% 的边距 -->
+  <rect x="100" y="100" width="824" height="824" rx="184" fill="url(#tile)" />
+  <rect
+    x="100.75"
+    y="100.75"
+    width="822.5"
+    height="822.5"
+    rx="183.25"
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity="0.08"
+    stroke-width="1.5"
+  />
+
+  <!--
+    基线比中心低 8 个 viewBox 单位：dominant-baseline="central" 是按字体的 em 框居中，
+    而 Menlo 的下沿留白比 # 的墨迹大，不补这一下字形会整体偏高。
+  -->
+  <text
+    x="512"
+    y="520"
+    dominant-baseline="central"
+    fill="#c98a3f"
+    font-family="Menlo, ui-monospace, SFMono-Regular, monospace"
+    font-size="600"
+    font-weight="700"
+    text-anchor="middle"
+  >#</text>
+</svg>
